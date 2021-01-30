@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   deploy:
     docker:
@@ -20,7 +20,6 @@ jobs:
       - deploy:
           name: Deploying to App Engine
           command: gcloud app deploy app.yaml
-      
 workflows:
   deploy:
     jobs:
