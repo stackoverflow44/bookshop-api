@@ -32,7 +32,7 @@ jobs:
           command: gcloud app deploy app.yaml
 
 orbs:
-  node: circleci/node@x.y
+  node: circleci/node@3.0.0
   
 workflows:
   test:
