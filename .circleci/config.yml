@@ -1,5 +1,15 @@
 version: 2.1
 jobs:
+  test:
+    executor:
+      name: node/default
+      tag: '13.14'
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          command: npm run test
+          
   deploy:
     docker:
       - image: google/cloud-sdk
@@ -22,6 +32,9 @@ jobs:
           command: gcloud app deploy app.yaml
           
 workflows:
+  test:
+    jobs:
+      - test
   deploy:
     jobs:
       - deploy:
