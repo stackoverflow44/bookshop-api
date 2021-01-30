@@ -20,11 +20,10 @@ jobs:
       - deploy:
           name: Deploying to App Engine
           command: gcloud app deploy app.yaml
+          
 workflows:
   deploy:
     jobs:
       - deploy:
           name: deploy-app
-          filters:
-            branches:
-              only: master
+
