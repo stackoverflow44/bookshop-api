@@ -33,13 +33,14 @@ jobs:
 
 orbs:
   node: circleci/node@3.0.0
-  
+          
 workflows:
-  test:
+  continuous_integration:
     jobs:
-      - test
-  deploy:
-    jobs:
+      - test:
+          name: run-unit-test
       - deploy:
           name: deploy-app
+          requires: 
+             -test
 
