@@ -41,5 +41,5 @@ workflows:
       - deploy:
           name: deploy-app
           requires: 
-             -test
+             - test
 
