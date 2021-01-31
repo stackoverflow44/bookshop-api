@@ -37,8 +37,7 @@ orbs:
 workflows:
   continuous_integration:
     jobs:
-      - test:
-          name: run-unit-test
+      - test
       - deploy:
           name: deploy-app
           requires: 
